@@ -1,0 +1,4708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakerz Bite</title>
+
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="Material/logo with bg.png" type="image/x-icon">
+
+  <!-- Bs Cdn Css V 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+
+  <!-- dancing script  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+
+
+  <!-- AOS CDN CSS LINK  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- lightbox2 css cdn  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.12.0/css/lightbox.min.css"
+    integrity="sha512-syoVEtpqX1CXqIWO4cTmlEfUKIqzne0NisLTmR4xGZNxNCjge36r1N9hJPCHVd1vPYAlAWHWFDFenTpn8ju2BA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- fontawesome cdn  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- css link  -->
+  <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+
+<body>
+
+
+  <header>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <p>Now Delivering in Karachi!</p>
+
+
+    </div>
+    <!-- Navbar -->
+    <nav class="navitem">
+      <div class="nav-left">
+        <!--  LOCATION  -->
+
+        <div class="location" onclick="openLocationPopup()">
+
+          <div class="location-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+
+          <div class="location-content">
+            <span class="location-title">DELIVERY</span>
+            <span id="display">Select Location</span>
+          </div>
+
+          <div class="location-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+        </div>
+
+
+        <!--  LOCATION POPUP -->
+
+        <div class="location-popup" id="locationPopup">
+
+          <div class="location-modal">
+
+            <!-- Close Button -->
+            <button class="close-location" onclick="closeLocationPopup()">
+              &times;
+            </button>
+
+
+            <!-- Logo -->
+            <div class="popup-logo-box">
+              <img src="Material/logo.png" alt="Bakerz Bite">
+            </div>
+
+
+            <!-- Heading -->
+            <h2>Select Your Order Type</h2>
+
+
+            <!-- Delivery / Pick-Up -->
+            <div class="order-type">
+
+              <button class="order-btn active" id="deliveryBtn">
+                Delivery
+              </button>
+
+              <button class="order-btn" id="pickupBtn">
+                Pick-Up
+              </button>
+
+            </div>
+
+
+            <!-- Location Text -->
+            <p class="location-question">
+              Please select your location
+            </p>
+
+
+            <!-- City -->
+            <label for="citySelect">
+              City
+            </label>
+
+            <input type="text" value="Karachi" disabled class="popup-select">
+
+
+
+            <!-- Area -->
+            <label for="areaSelect">
+              Please select your area
+            </label>
+
+            <select id="areaSelect" class="popup-select">
+
+              <option value="">
+                Select Location
+              </option>
+
+            </select>
+
+
+            <!-- Select Button -->
+            <button class="select-location-btn" onclick="confirmLocation()">
+              Select
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- Call & Order -->
+        <div class="call text">
+          <div class="call-icon"> <i class="fa-solid fa-phone"></i> </div>030-012-345-67
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <a href="" class="navlogo"><img src="Material/Logo.png" alt="Bakerz Bite"></a>
+      <!-- Visitor Counter -->
+      <div class="nav-right">
+        <div class="visitor "> <i class="fa-regular fa-user vc"></i><span id="counter">1204</span> </div>
+
+        <!-- Cart -->
+        <div class="cart"><i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count">0</span>
+        </div>
+
+        <!-- Menu Button -->
+        <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">☰</button>
+      </div>
+
+
+      <div class="nav-menu" id="navMenu">
+
+        <!-- Close Button -->
+        <button class="close-btn" onclick="toggleMenu()">×</button>
+
+
+        <a href="#home">Home</a>
+        <a href="#merchandise">Merchandise</a>
+        <a href="#offers">Offers</a>
+        <a href="About.html#gallery">Gallery</a>
+        <a href="About.html">About Us</a>
+        <a href="contact.html#faq">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </nav>
+    
+
+    <!-- Main Content -->
+    <main id="home">
+
+      <!--Caraosel  -->
+      <div id="heroCarousel" class="carousel slide hero-wrapper" data-bs-ride="carousel" data-bs-interval="4000">
+
+
+        <!-- Carousel Images -->
+        <div class="carousel-inner">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+
+            <img src="material/hero.png" class="d-block w-100" alt="Freshly baked cake">
+
+            <div class="carousel-caption hero-text">
+
+              <h1>Freshly Baked</h1>
+
+              <h2>Made With Love</h2>
+
+              <p>Delicious treats for every occasion.</p>
+
+              <a href="#cake" style="text-decoration: none;">
+                <button class="hero-shop-btn">
+                  Shop Now →
+                </button>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+
+            <img src="material/hero 2.png" class="d-block w-100" alt="Fresh bakery products">
+
+            <div class="carousel-caption hero-text">
+
+              <h1>Sweet Moments</h1>
+
+              <h2>Made Fresh Daily</h2>
+
+              <p>Delicious treats baked just for you.</p>
+
+              <a href="#cake" style="text-decoration: none;">
+                <button class="hero-shop-btn">
+                  Shop Now →
+                </button>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+
+            <img src="material/hero 3.png" class="d-block w-100" alt="Bakery special">
+
+            <div class="carousel-caption hero-text">
+
+              <h1>Delicious Treats</h1>
+
+              <h2>For Every Occasion</h2>
+
+              <p>Freshly prepared with love and care.</p>
+
+              <a href="#cake" style="text-decoration: none;">
+                <button class="hero-shop-btn">
+                  Shop Now →
+                </button>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+
+            <img src="material/hero 4.png" class="d-block w-100" alt="Bakery collection">
+
+            <div class="carousel-caption hero-text">
+
+              <h1>Our Special Collection</h1>
+
+              <h2>Taste The Difference</h2>
+
+              <p>Discover your favorite bakery delights.</p>
+
+              <a href="#cake" style="text-decoration: none;">
+                <button class="hero-shop-btn">
+                  Shop Now →
+                </button>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Previous Button -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+
+          <span class="carousel-control-prev-icon" aria-hidden="true">
+          </span>
+
+          <span class="visually-hidden">
+            Previous
+          </span>
+
+        </button>
+
+
+        <!-- Next Button -->
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+
+          <span class="carousel-control-next-icon" aria-hidden="true">
+          </span>
+
+          <span class="visually-hidden">
+            Next
+          </span>
+
+        </button>
+
+      </div>
+
+
+      <!-- Categories -->
+      <div class="container-fluid my-4">
+        <div class="row text-center g-3">
+
+          <div class="col">
+            <div class="category">
+              <a href="#cake">
+                <img src="Material/cake icon.png" alt="Cakes">
+
+                <p>Cakes</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="category">
+              <a href="#savory">
+                <img src="Material/savories icon.png" alt="Savories">
+
+                <p>Savories</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="category">
+              <a href="#shake">
+                <img src="Material/shake icon (2).png" alt="Shakes">
+
+                <p>Shakes</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="category">
+              <a href="#customized">
+                <img src="Material/customize cake icon.png" alt="Custom Cakes">
+
+                <p>Custom cakes</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="category">
+              <a href="#brownies">
+                <img src="Material/cupcake icon.png" alt="Cupcakes">
+
+                <p>Cupcakes</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="category">
+              <a href="#brownies">
+                <img src="Material/brownie icon.png" alt="Pastries">
+
+                <p>Pastries</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="category">
+              <a href="#coffee">
+                <img src="Material/coffee icon.png" alt="Coffee">
+
+                <p>Coffee</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="category">
+              <a href="#offers">
+                <img src="Material/offer icon.png" alt="offers">
+
+                <p>Offers</p>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Search & Filters -->
+      <div class="search-filter">
+
+        <!-- Search -->
+        <form id="searchForm" class="search-box">
+          <input id="searchInput" type="search" placeholder="Search For Products">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+
+        <!-- Category -->
+
+        <select class="filter-box" id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="cakes">Cakes</option>
+          <option value="savories">Savories</option>
+          <option value="cupcakes">Cupcakes & Pastries</option>
+          <option value="shakes">Shakes</option>
+          <option value="coffee">Coffee</option>
+          <option value="custom cakes">Custom Cakes</option>
+          <option value="merchandise">Merchandise</option>
+        </select>
+
+
+      </div>
+
+    </main>
+
+  </header>
+
+
+  <!-- cake cards  -->
+  <section class="bakery-section" id="cake">
+    <!-- bs carousel -->
+    <div id="bakerySlider" class="carousel slide container" data-bs-ride="false">
+      <div class="text-center our-bakery">
+        <h1 data-aos="fade-right">Our Fresh Cakes</h1>
+        <p>Where smiles are served daily</p>
+      </div>
+
+      <!-- carousel-inner  -->
+      <div class="carousel-inner ">
+        <!-- slide1  -->
+        <div class="carousel-item active">
+          <div class="row g-4 border-item">
+            <!-- product1 -->
+            <div class="col-12 col-sm-6 col-lg-3 ">
+              <div class="card bakery-card ">
+                <img src="MATERIAL/cake1.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Lotus Tri milk</h6>
+                  <p class="price">Rs.2780</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#c1">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product2 -->
+            <div class="col-12 col-sm-6 col-lg-3 ">
+              <div class="card bakery-card">
+                <img src="MATERIAL/cake2.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Chocolate Fudge Cake</h6>
+                  <p class="price">Rs.3000</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#c2">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product3  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/cake3.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6>London Viral Cake</h6>
+                  <p class="price">Rs.2500</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#c3">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product4  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/cake4.png" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Tri Milk Cake</h6>
+                  <p class="price">Rs.3200</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#c4">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- </div> -->
+        </div>
+
+        <!-- slide2 -->
+        <div class="carousel-item ">
+          <div class="row g-4">
+            <!-- product1 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/cake5.png" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Rainbow Cake</h6>
+                  <p class="price">Rs.2800</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#c5">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/cake6.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Choco-Rose Fantasy</h6>
+                  <p class="price">Rs.3500</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#c6">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product3  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/cake7.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Vanilla Caramel Cake</h6>
+                  <p class="price">Rs.2730</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#c7">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product4  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/cake8.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Mocha Java Cake</h6>
+                  <p class="price">Rs.3100</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#c8">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- arrow controls -->
+      <div class="d-flex justify-content-center align-items-center mt-4">
+        <button class="carousel-control-prev arrow-bottom" type="button" data-bs-target="#bakerySlider"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#bakerySlider" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#bakerySlider" data-bs-slide-to="1"></button>
+        </div>
+        <button class="carousel-control-next arrow-bottom" type="button" data-bs-target="#bakerySlider"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <!-- end -->
+    </div>
+  </section>
+
+
+
+  <!-- Savories -->
+  <section class="bakery-section" id="savory">
+    <!-- bs carousel -->
+    <div id="bakerySlider2" class="carousel slide container" data-bs-ride="false">
+
+      <div class="text-center our-bakery">
+        <h1 data-aos="fade-right">Royal Savories</h1>
+        <p>Where smiles are served daily</p>
+      </div>
+
+      <!-- carousel-inner  -->
+      <div class="carousel-inner ">
+        <!-- slide1  -->
+        <div class="carousel-item active">
+          <div class="row g-4 border-item">
+            <!-- product1 -->
+            <div class="col-12 col-sm-6 col-lg-3  ">
+              <div class="card bakery-card ">
+                <img src="MATERIAL/savory1.png" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Rustic Grilled Sandwich</h6>
+                  <p class="price">Rs.270</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#s1">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/savory2.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Pizza Chicken</h6>
+                  <p class="price">Rs.200</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#s2">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product3  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/savory3.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Chicken Patties</h6>
+                  <p class="price">Rs.250</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#s3">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product4  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/savory4.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Chicken Samosa</h6>
+                  <p class="price">Rs.100</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#s4">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- </div> -->
+        </div>
+
+        <!-- slide2 -->
+        <div class="carousel-item ">
+          <div class="row g-4">
+            <!-- product1 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/savory5.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Chicken Bread</h6>
+                  <p class="price">Rs.280</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#s5">  View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/savory6.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Chicken Tikka Sandwich</h6>
+                  <p class="price">Rs.350</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#s6">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product3  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/savory7.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Cheese Straws</h6>
+                  <p class="price">Rs.270</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#s7">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product4  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/savory8.jpg" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Empanada</h6>
+                  <p class="price">Rs.300</p>
+                  <button class="btn  w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#s8">View Details </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- arrow controls -->
+      <div class="d-flex justify-content-center align-items-center mt-4">
+        <button class="carousel-control-prev arrow-bottom" type="button" data-bs-target="#bakerySlider2"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#bakerySlider2" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#bakerySlider2" data-bs-slide-to="1"></button>
+        </div>
+        <button class="carousel-control-next arrow-bottom" type="button" data-bs-target="#bakerySlider2"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <!-- end -->
+    </div>
+  </section>
+
+  <!-- cupcakes / pastry -->
+  <section class="bakery-section" id="brownies">
+    <!-- bs carousel -->
+    <div id="bakerySlider3" class="carousel slide container" data-bs-ride="false">
+
+      <div class="text-center our-bakery">
+        <h1 data-aos="fade-right">Cupcakes & Pastry</h1>
+        <p>Where smiles are served daily</p>
+      </div>
+      <!-- carousel-inner  -->
+      <div class="carousel-inner ">
+
+
+        <div class="carousel-item active">
+          <div class="row g-4 border-item">
+            <!-- product1 -->
+            <div class="col-12 col-sm-6 col-lg-3  ">
+              <div class="card bakery-card ">
+                <img src="MATERIAL/cupcake1.jpeg" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Coffee Cupcake</h6>
+                  <p class="price">Rs.270</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#b1">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/cupcake2.webp" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Chocolate Cupcake</h6>
+                  <p class="price">Rs.200</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#b2">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product3  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/cupcake3.webp" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Peanut Cupcake</h6>
+                  <p class="price">Rs.250</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#b3">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product4  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/cupcake4.webp" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Strawberry Cupcake</h6>
+                  <p class="price">Rs.100</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#b4">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- </div> -->
+        </div>
+
+        <!-- slide2 -->
+
+        <div class="carousel-item ">
+          <div class="row g-4">
+            <!-- product1 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/pastry5.png" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Alaska pastry</h6>
+                  <p class="price">Rs.280</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#b5">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/pastry6.png" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Chocolate pastry</h6>
+                  <p class="price">Rs.200</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#b6">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product3  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/pastry7.png" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Black forest pastry</h6>
+                  <p class="price">Rs.270</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#b7">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product4  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/pastry8.png" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Milk Fy Pastry</h6>
+                  <p class="price">Rs.220</p>
+                  <button class="btn  w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#b8">View Details </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- arrow controls -->
+      <div class="d-flex justify-content-center align-items-center mt-4">
+        <button class="carousel-control-prev arrow-bottom" type="button" data-bs-target="#bakerySlider3"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#bakerySlider3" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#bakerySlider3" data-bs-slide-to="1"></button>
+        </div>
+        <button class="carousel-control-next arrow-bottom" type="button" data-bs-target="#bakerySlider3"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <!-- end -->
+    </div>
+  </section>
+
+
+
+  <!-- shake  -->
+  <section class="bakery-section" id="shake">
+    <!-- bs carousel -->
+    <div id="bakerySlider4" class="carousel slide container" data-bs-ride="false">
+
+      <div class="text-center our-bakery">
+        <h1 data-aos="fade-right">The Shake Corner</h1>
+        <p>Where smiles are served daily</p>
+      </div>
+
+      <!-- carousel-inner  -->
+      <div class="carousel-inner ">
+
+
+        <div class="carousel-item active">
+          <div class="row g-4 border-item">
+            <!-- product1 -->
+            <div class="col-12 col-sm-6 col-lg-3  ">
+              <div class="card bakery-card ">
+                <img src="MATERIAL/shake1.jfif" class="shake" alt="shake">
+                <div class="card-body text-center">
+                  <h6> Chocolate Shake</h6>
+                  <p class="price">Rs.550</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#p1">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/shake2.jfif" class="shake" alt="shake">
+                <div class="card-body text-center">
+                  <h6> Strawberry Shake</h6>
+                  <p class="price">Rs.400</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#p2">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product3  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/shake3.jfif" class="shake" alt="shake">
+                <div class="card-body text-center">
+                  <h6>Blueberry Shake</h6>
+                  <p class="price">Rs.500</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#p3">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product4  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/shake4.jfif" class="shake" alt="shake">
+                <div class="card-body text-center">
+                  <h6> Mango Shake</h6>
+                  <p class="price">Rs.350</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#p4">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+      <!-- end -->
+    </div>
+  </section>
+
+
+  <!-- coffee -->
+  <section class="bakery-section" id="coffee">
+    <!-- bs carousel -->
+    <div id="bakerySlider5" class="carousel slide container" data-bs-ride="false">
+
+      <div class="text-center our-bakery">
+        <h1 data-aos="fade-right">The Coffee Corner</h1>
+        <p>Where smiles are served daily</p>
+      </div>
+
+      <!-- carousel-inner  -->
+      <div class="carousel-inner ">
+        <!-- slide1  -->
+        <div class="carousel-item active">
+          <div class="row g-4 border-item">
+            <!-- product1 -->
+            <div class="col-12 col-sm-6 col-lg-3  ">
+              <div class="card bakery-card ">
+                <img src="MATERIAL/coffee1.jfif" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Iced Spanish Latte</h6>
+                  <p class="price">Rs.400</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#a1">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/coffee2.jfif" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Caramel Latte</h6>
+                  <p class="price">Rs.500</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#a2">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product3  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/coffee3.jfif" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Pistachio Latte</h6>
+                  <p class="price">Rs.450</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#a3">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product4  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/coffee4.jfif" alt="cake">
+                <div class="card-body text-center">
+                  <h6> Iced Mocha Latte</h6>
+                  <p class="price">Rs.620</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#a4">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- </div> -->
+        </div>
+
+        <!-- slide2 -->
+        <div class="carousel-item ">
+          <div class="row g-4">
+            <!-- product1 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/coffee5.jfif" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Chocolate Iced Latte</h6>
+                  <p class="price">Rs.800</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#a5">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/coffee6.jfif" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Dalgona Coffee</h6>
+                  <p class="price">Rs.700</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#a6">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product3  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/coffee7.jfif" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Vanilla Latte</h6>
+                  <p class="price">Rs.730</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#a7">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product4  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/coffee8.jfif" alt="cake">
+                <div class="card-body text-center">
+                  <h6>Chocolate Matcha</h6>
+                  <p class="price">Rs.480</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#a8">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- arrow controls -->
+      <div class="d-flex justify-content-center align-items-center mt-4">
+        <button class="carousel-control-prev arrow-bottom" type="button" data-bs-target="#bakerySlider5"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#bakerySlider5" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#bakerySlider5" data-bs-slide-to="1"></button>
+        </div>
+        <button class="carousel-control-next arrow-bottom" type="button" data-bs-target="#bakerySlider5"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <!-- end -->
+    </div>
+  </section>
+
+  <!--customized cake -->
+  <section class="bakery-section" id="customized">
+    <!-- bs carousel -->
+    <div id="bakerySlider6" class="carousel slide container" data-bs-ride="false">
+
+      <div class="text-center our-bakery">
+        <h1 data-aos="fade-right">Custom Cake</h1>
+        <p>Where smiles are served daily</p>
+      </div>
+
+      <!-- carousel-inner  -->
+      <div class="carousel-inner ">
+
+
+        <div class="carousel-item active">
+          <div class="row g-4 border-item">
+            <!-- product1 -->
+            <div class="col-12 col-sm-6 col-lg-3  ">
+              <div class="card bakery-card ">
+                <img src="MATERIAL/customized1.png" class="shake" alt="shake">
+                <div class="card-body text-center">
+                  <h6> Dholki cake</h6>
+                  <p class="price">Rs.11550</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#f1">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/customized8.jpg" class="shake" alt="shake">
+                <div class="card-body text-center">
+                  <h6> Birthday Cake</h6>
+                  <p class="price">Rs.22400</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#f2">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product3  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/customized3.jpg" class="shake" alt="shake">
+                <div class="card-body text-center">
+                  <h6>Party Cake</h6>
+                  <p class="price">Rs.11500</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#f3">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- product4  -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="card bakery-card">
+                <img src="MATERIAL/custom10.jpeg" class="shake" alt="shake">
+                <div class="card-body text-center">
+                  <h6> Wedding Cake</h6>
+                  <p class="price">Rs.12350</p>
+                  <button class="btn btn-dark w-100 btn-sm" data-bs-toggle="modal" data-bs-target="#f4">View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+      <!-- end -->
+    </div>
+  </section>
+
+
+
+  <!-- cake modal  -->
+  <!-- modal1 -->
+  <div class="modal fade cake-modal " id="c1" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <!-- Cake Image -->
+            <div class="modal-image">
+              <img src="MATERIAL/cake1.jpg" alt="Lotus Tri Milk">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Lotus Tri Milk</h1>
+
+              <h2>Rs. 2780</h2>
+
+              <p class="modal-description">
+                A soft and creamy milk cake topped with
+                delicious Lotus spread and biscuit crumbs.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Vanilla sponge, three milk mixture,
+                  Lotus spread, whipped cream and
+                  Lotus biscuit crumbs.
+                </p>
+
+              </div>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeItem(1)">
+                    🗑
+                  </button>
+
+                  <button onclick="decrease(1)">
+                    −
+                  </button>
+
+                  <span id="qty1">1</span>
+
+                  <button onclick="increase(1)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addCart('Lotus Tri Milk',2780,1)">
+
+                  Rs. <span id="total1">2780</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- modal2 -->
+  <div class="modal fade cake-modal" id="c2" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cake2.jpg" alt="Chocolate Fudge Cake">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Chocolate Fudge Cake</h1>
+
+              <h2>Rs. 3000</h2>
+
+              <p class="modal-description">
+                A rich and moist chocolate cake covered with
+                smooth chocolate fudge and delicious cream.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Chocolate sponge, chocolate fudge,
+                  whipped cream, cocoa and chocolate chips.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeItem(2)">
+                    🗑
+                  </button>
+
+                  <button onclick="decrease(2)">
+                    −
+                  </button>
+
+                  <span id="qty2">1</span>
+
+                  <button onclick="increase(2)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addCart('Chocolate Fudge Cake',3000,2)">
+
+                  Rs. <span id="total2">3000</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal3 -->
+  <div class="modal fade cake-modal" id="c3" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cake3.jpg" alt="London Viral Cake">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>London Viral Cake</h1>
+
+              <h2>Rs. 2500</h2>
+
+              <p class="modal-description">
+                A deliciously soft cake with creamy layers
+                and a rich, irresistible chocolate topping.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Soft vanilla sponge, fresh cream,
+                  chocolate sauce and chocolate decorations.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeItem(3)">
+                    🗑
+                  </button>
+
+                  <button onclick="decrease(3)">
+                    −
+                  </button>
+
+                  <span id="qty3">1</span>
+
+                  <button onclick="increase(3)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addCart('London Viral Cake',2500,3)">
+
+                  Rs. <span id="total3">2500</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal4 -->
+  <div class="modal fade cake-modal" id="c4" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cake4.png" alt="Tri Milk Cake">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Tri Milk Cake</h1>
+
+              <h2>Rs. 3200</h2>
+
+              <p class="modal-description">
+                A soft and creamy three-milk cake with
+                a delicate texture and rich milky flavor.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Vanilla sponge, three milk mixture,
+                  whipped cream and milk caramel topping.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeItem(4)">
+                    🗑
+                  </button>
+
+                  <button onclick="decrease(4)">
+                    −
+                  </button>
+
+                  <span id="qty4">1</span>
+
+                  <button onclick="increase(4)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addCart('Tri Milk Cake',3200,4)">
+
+                  Rs. <span id="total4">3200</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal5 -->
+  <div class="modal fade cake-modal" id="c5" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cake5.png" alt="Rainbow Cake">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Rainbow Cake</h1>
+
+              <h2>Rs. 2800</h2>
+
+              <p class="modal-description">
+                A colorful and soft layered cake filled with
+                smooth cream and a sweet vanilla flavor.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Vanilla sponge, colorful cake layers,
+                  whipped cream and vanilla frosting.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeItem(5)">
+                    🗑
+                  </button>
+
+                  <button onclick="decrease(5)">
+                    −
+                  </button>
+
+                  <span id="qty5">1</span>
+
+                  <button onclick="increase(5)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addCart('Rainbow Cake',2800,5)">
+
+                  Rs. <span id="total5">2800</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal6 -->
+  <div class="modal fade cake-modal" id="c6" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cake6.jpg" alt="Choco-Rose Fantasy">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Choco-Rose Fantasy</h1>
+
+              <h2>Rs. 3500</h2>
+
+              <p class="modal-description">
+                A luxurious chocolate cake decorated with
+                creamy rose details and rich chocolate flavor.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Chocolate sponge, chocolate ganache,
+                  whipped cream and rose-flavored decorations.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeItem(6)">
+                    🗑
+                  </button>
+
+                  <button onclick="decrease(6)">
+                    −
+                  </button>
+
+                  <span id="qty6">1</span>
+
+                  <button onclick="increase(6)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addCart('Choco-Rose Fantasy',3500,6)">
+
+                  Rs. <span id="total6">3500</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal7 -->
+  <div class="modal fade cake-modal" id="c7" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cake7.jpg" alt="Vanilla Caramel Cake">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Vanilla Caramel Cake</h1>
+
+              <h2>Rs. 2730</h2>
+
+              <p class="modal-description">
+                A soft vanilla cake layered with creamy
+                frosting and finished with smooth caramel.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Vanilla sponge, vanilla cream,
+                  caramel sauce and caramel crumbs.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeItem(7)">
+                    🗑
+                  </button>
+
+                  <button onclick="decrease(7)">
+                    −
+                  </button>
+
+                  <span id="qty7">1</span>
+
+                  <button onclick="increase(7)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addCart('Vanilla Caramel Cake',2730,7)">
+
+                  Rs. <span id="total7">2730</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal8 -->
+  <div class="modal fade cake-modal" id="c8" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cake8.jpg" alt="Mocha Java Cake">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Mocha Java Cake</h1>
+
+              <h2>Rs. 3100</h2>
+
+              <p class="modal-description">
+                A rich coffee and chocolate cake with
+                creamy layers and a smooth mocha finish.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Chocolate sponge, mocha cream,
+                  coffee syrup, chocolate and whipped cream.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeItem(8)">
+                    🗑
+                  </button>
+
+                  <button onclick="decrease(8)">
+                    −
+                  </button>
+
+                  <span id="qty8">1</span>
+
+                  <button onclick="increase(8)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addCart('Mocha Java Cake',3100,8)">
+
+                  Rs. <span id="total8">3100</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- savory modal  -->
+
+  <!-- Model 1 -->
+  <div class="modal fade cake-modal" id="s1" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/savory1.png" alt="Rustic Grilled Sandwich">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Rustic Grilled Sandwich</h1>
+
+              <h2>Rs. 270</h2>
+
+              <p class="modal-description">
+                Delicious grilled sandwich filled with savory flavors.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Bread, grilled chicken, cheese,
+                  lettuce, tomato, mayonnaise and black pepper.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeSavoryItem(1)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseSavory(1)">
+                    −
+                  </button>
+
+                  <span id="sqty1">1</span>
+
+                  <button onclick="increaseSavory(1)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addSavoryCart('Rustic Grilled Sandwich',270,1)">
+
+                  Rs. <span id="stotal1">270</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Model 2 -->
+  <div class="modal fade cake-modal" id="s2" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/savory2.jpg" alt="Pizza Chicken">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Pizza Chicken</h1>
+
+              <h2>Rs. 200</h2>
+
+              <p class="modal-description">
+                Soft and delicious chicken pizza packed with flavor.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Pizza dough, chicken, mozzarella cheese,
+                  tomato sauce, capsicum, onion and oregano.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeSavoryItem(2)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseSavory(2)">
+                    −
+                  </button>
+
+                  <span id="sqty2">1</span>
+
+                  <button onclick="increaseSavory(2)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn " onclick="addSavoryCart('Pizza Chicken',200,2)">
+
+                  Rs. <span id="stotal2">200</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Model 3 -->
+  <div class="modal fade cake-modal" id="s3" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/savory3.jpg" alt="Chicken Patties">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Chicken Patties</h1>
+
+              <h2>Rs. 250</h2>
+
+              <p class="modal-description">
+                Crispy and tasty chicken patties with a flavorful filling.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Puff pastry, chicken, onion, green chilli,
+                  black pepper, salt and egg.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeSavoryItem(3)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseSavory(3)">
+                    −
+                  </button>
+
+                  <span id="sqty3">1</span>
+
+                  <button onclick="increaseSavory(3)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addSavoryCart('Chicken Patties',250,3)">
+
+                  Rs. <span id="stotal3">250</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Model 4 -->
+  <div class="modal fade cake-modal" id="s4" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/savory4.jpg" alt="Chicken Samosa">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Chicken Samosa</h1>
+
+              <h2>Rs. 100</h2>
+
+              <p class="modal-description">
+                Crispy samosa filled with delicious chicken.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Samosa sheets, chicken, onion, green chilli,
+                  coriander, black pepper and spices.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeSavoryItem(4)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseSavory(4)">
+                    −
+                  </button>
+
+                  <span id="sqty4">1</span>
+
+                  <button onclick="increaseSavory(4)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addSavoryCart('Chicken Samosa',100,4)">
+
+                  Rs. <span id="stotal4">100</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Model 5 -->
+  <div class="modal fade cake-modal" id="s5" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/savory5.jpg" alt="Chicken Bread">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Chicken Bread</h1>
+
+              <h2>Rs. 280</h2>
+
+              <p class="modal-description">
+                Soft baked bread filled with delicious chicken.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Bread dough, chicken, cheese,
+                  onion, capsicum, mayonnaise and black pepper.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeSavoryItem(5)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseSavory(5)">
+                    −
+                  </button>
+
+                  <span id="sqty5">1</span>
+
+                  <button onclick="increaseSavory(5)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addSavoryCart('Chicken Bread',280,5)">
+
+                  Rs. <span id="stotal5">280</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Model 6 -->
+  <div class="modal fade cake-modal" id="s6" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/savory6.jpg" alt="Chicken Tikka Sandwich">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Chicken Tikka Sandwich</h1>
+
+              <h2>Rs. 350</h2>
+
+              <p class="modal-description">
+                Juicy chicken tikka served in a delicious sandwich.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Bread, chicken tikka, cheese, lettuce,
+                  tomato, mayonnaise and tikka spices.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeSavoryItem(6)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseSavory(6)">
+                    −
+                  </button>
+
+                  <span id="sqty6">1</span>
+
+                  <button onclick="increaseSavory(6)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addSavoryCart('Chicken Tikka Sandwich',350,6)">
+
+                  Rs. <span id="stotal6">350</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Model 7 -->
+  <div class="modal fade cake-modal" id="s7" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/savory7.jpg" alt="Cheese Straws">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Cheese Straws</h1>
+
+              <h2>Rs. 270</h2>
+
+              <p class="modal-description">
+                Crispy golden cheese straws with a rich cheesy taste.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Flour, cheese, butter, milk, salt,
+                  black pepper and oregano.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeSavoryItem(7)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseSavory(7)">
+                    −
+                  </button>
+
+                  <span id="sqty7">1</span>
+
+                  <button onclick="increaseSavory(7)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addSavoryCart('Cheese Straws',270,7)">
+
+                  Rs. <span id="stotal7">270</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Model 8 -->
+  <div class="modal fade cake-modal" id="s8" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cupcake1.jpeg" alt="Empanada">
+            </div>
+
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Empanada</h1>
+
+              <h2>Rs. 300</h2>
+
+              <p class="modal-description">
+                Golden crispy empanada with a delicious savory filling.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Pastry dough, chicken, onion, capsicum,
+                  garlic, black pepper and mixed spices.
+                </p>
+
+              </div>
+
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeSavoryItem(8)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseSavory(8)">
+                    −
+                  </button>
+
+                  <span id="sqty8">1</span>
+
+                  <button onclick="increaseSavory(8)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addSavoryCart('Empanada',300,8)">
+
+                  Rs. <span id="stotal8">300</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- cupcake & brownie -->
+
+  <!-- modal1  -->
+  <div class="modal fade cake-modal" id="b1" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cupcake1.jpeg" alt="Vanilla Cupcake">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1> Coffee Cupcake</h1>
+              <h2>Rs. 180</h2>
+
+              <p class="modal-description">
+                Soft and fluffy vanilla cupcake topped with creamy frosting.
+              </p>
+
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>
+                  Flour, vanilla, sugar, eggs, butter, milk and creamy frosting.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecupItem(1)">🗑</button>
+                  <button onclick="decreasecup(1)">−</button>
+                  <span id="bqty1">1</span>
+                  <button onclick="increasecup(1)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addSavorycup('Vanilla Cupcake',180,1)">
+                  Rs. <span id="btotal1">180</span>
+                  <span>|</span>
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal2  -->
+  <div class="modal fade cake-modal" id="b2" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cupcake2.webp" alt="Chocolate Cupcake">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Chocolate Cupcake</h1>
+              <h2>Rs. 200</h2>
+
+              <p class="modal-description">
+                Rich chocolate cupcake finished with smooth chocolate frosting.
+              </p>
+
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>
+                  Flour, cocoa, sugar, eggs, butter, milk and chocolate frosting.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removeSavorycup(2)">🗑</button>
+                  <button onclick="decreasecup(2)">−</button>
+                  <span id="bqty2">1</span>
+                  <button onclick="increasecup(2)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addSavorycup('Chocolate Cupcake',200,2)">
+                  Rs. <span id="btotal2">200</span>
+                  <span>|</span>
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal3  -->
+  <div class="modal fade cake-modal" id="b3" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cupcake3.webp" alt="Red Velvet Cupcake">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Peanut Cupcake</h1>
+              <h2>Rs. 220</h2>
+
+              <p class="modal-description">
+                Moist red velvet cupcake topped with silky cream cheese frosting.
+              </p>
+
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>
+                  Flour, cocoa, sugar, eggs, butter, milk and cream cheese frosting.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecupItem(3)">🗑</button>
+                  <button onclick="decreasecup(3)">−</button>
+                  <span id="bqty3">1</span>
+                  <button onclick="increasecup(3)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addSavorycup('Red Velvet Cupcake',220,3)">
+                  Rs. <span id="btotal3">220</span>
+                  <span>|</span>
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal4  -->
+  <div class="modal fade cake-modal" id="b4" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/cupcake4.webp" alt="Strawberry Cupcake">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Strawberry Cupcake</h1>
+              <h2>Rs. 210</h2>
+
+              <p class="modal-description">
+                Delicious strawberry cupcake with a sweet and creamy topping.
+              </p>
+
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>
+                  Flour, strawberries, sugar, eggs, butter, milk and fresh cream.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecupItem(4)">🗑</button>
+                  <button onclick="decreasecup(4)">−</button>
+                  <span id="bqty4">1</span>
+                  <button onclick="increasecup(4)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addcupCart('Strawberry Cupcake',210,4)">
+                  Rs. <span id="btotal4">210</span>
+                  <span>|</span>
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal5  -->
+  <div class="modal fade cake-modal" id="b5" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/pastry5.png" alt="Alaska pastry">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Alaska pastry</h1>
+              <h2>Rs. 280</h2>
+
+              <p class="modal-description">
+                Rich fudgy brownie layered with a smooth and creamy topping.
+              </p>
+
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>
+                  Cocoa, flour, sugar, eggs, butter, chocolate and creamy topping.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecupItem(5)">🗑</button>
+                  <button onclick="decreasecup(5)">−</button>
+                  <span id="bqty5">1</span>
+                  <button onclick="increasecup(5)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn " onclick="addcupCart('Alaska Brownie',280,5)">
+                  Rs. <span id="btotal5">280</span>
+                  <span>|</span>
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal6  -->
+  <div class="modal fade cake-modal" id="b6" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/pastry6.png" alt="Chocolate pastry">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Chocolate pastry</h1>
+              <h2>Rs. 200</h2>
+
+              <p class="modal-description">
+                Classic chocolate brownie with a rich fudgy center.
+              </p>
+
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>
+                  Dark chocolate, cocoa, flour, sugar, eggs and butter.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecupItem(6)">🗑</button>
+                  <button onclick="decreasecup(6)">−</button>
+                  <span id="bqty6">1</span>
+                  <button onclick="increasecup(6)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addcupCart('Chocolate Brownie',200,6)">
+                  Rs. <span id="btotal6">200</span>
+                  <span>|</span>
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal7  -->
+  <div class="modal fade cake-modal" id="b7" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/pastry7.png" alt="Brownie With Frosting">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Black Forest pastry</h1>
+              <h2>Rs. 270</h2>
+
+              <p class="modal-description">
+                Soft fudgy brownie topped with smooth and delicious frosting.
+              </p>
+
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>
+                  Cocoa, flour, sugar, eggs, butter, chocolate and creamy frosting.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecupItem(7)">🗑</button>
+                  <button onclick="decreasecup(7)">−</button>
+                  <span id="bqty7">1</span>
+                  <button onclick="increasecup(7)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addcupCart('Brownie With Frosting',270,7)">
+                  Rs. <span id="btotal7">270</span>
+                  <span>|</span>
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal8  -->
+  <div class="modal fade cake-modal" id="b8" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/pastry8.png" alt="Coffee Crumble Brownie">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Milk Fy Pastry</h1>
+              <h2>Rs. 220</h2>
+
+              <p class="modal-description">
+                Delicious fudgy brownie with coffee flavor and a crunchy crumble.
+              </p>
+
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>
+                  Cocoa, flour, coffee, sugar, eggs, butter and crunchy crumble.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecupItem(8)">🗑</button>
+                  <button onclick="decreasecup(8)">−</button>
+                  <span id="bqty8">1</span>
+                  <button onclick="increasecup(8)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addcupCart('Coffee Crumble Brownie',220,8)">
+                  Rs. <span id="btotal8">220</span>
+                  <span>|</span>
+                  Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- shake modal  -->
+
+  <!-- modal1 -->
+  <div class="modal fade cake-modal" id="p1" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <!-- Shake Image -->
+            <div class="modal-image">
+              <img src="MATERIAL/shake1.jfif" alt="Chocolate Shake">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Chocolate Shake</h1>
+
+              <h2>Rs. 550</h2>
+
+              <p class="modal-description">
+                A rich and creamy chocolate shake made with
+                smooth chocolate and fresh milk.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Fresh milk, chocolate syrup, cocoa,
+                  sugar, cream and ice cream.
+                </p>
+
+              </div>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeshakeItem(1)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseshake(1)">
+                    −
+                  </button>
+
+                  <span id="pqty1">1</span>
+
+                  <button onclick="increaseshake(1)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addshakeCart('Chocolate Shake',550,1)">
+
+                  Rs. <span id="ptotal1">550</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal2 -->
+  <div class="modal fade cake-modal" id="p2" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <!-- Shake Image -->
+            <div class="modal-image">
+              <img src="MATERIAL/shake2.jfif" alt="Strawberry Shake">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Strawberry Shake</h1>
+
+              <h2>Rs. 400</h2>
+
+              <p class="modal-description">
+                A refreshing and creamy strawberry shake
+                prepared with fresh strawberries and milk.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Fresh strawberries, milk, sugar,
+                  strawberry syrup, cream and ice cream.
+                </p>
+
+              </div>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeshakeItem(2)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseshake(2)">
+                    −
+                  </button>
+
+                  <span id="pqty2">1</span>
+
+                  <button onclick="increaseshake(2)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addshakeCart('Strawberry Shake',400,2)">
+
+                  Rs. <span id="ptotal2">400</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal3 -->
+  <div class="modal fade cake-modal" id="p3" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <!-- Shake Image -->
+            <div class="modal-image">
+              <img src="MATERIAL/shake3.jfif" alt="Blueberry Shake">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Blueberry Shake</h1>
+
+              <h2>Rs. 500</h2>
+
+              <p class="modal-description">
+                A smooth and refreshing blueberry shake
+                with a rich fruity flavor and creamy texture.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Fresh blueberries, milk, sugar,
+                  blueberry syrup, cream and ice cream.
+                </p>
+
+              </div>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeshakeItem(3)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseshake(3)">
+                    −
+                  </button>
+
+                  <span id="pqty3">1</span>
+
+                  <button onclick="increaseshake(3)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addshakeCart('Blueberry Shake',500,3)">
+
+                  Rs. <span id="ptotal3">500</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal4 -->
+  <div class="modal fade cake-modal" id="p4" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+            <!-- Shake Image -->
+            <div class="modal-image">
+              <img src="MATERIAL/shake4.jfif" alt="Mango Shake">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Mango Shake</h1>
+
+              <h2>Rs. 350</h2>
+
+              <p class="modal-description">
+                A delicious and creamy mango shake made
+                with sweet mangoes and fresh milk.
+              </p>
+
+              <div class="ingredients">
+
+                <h4>Ingredients</h4>
+
+                <p>
+                  Fresh mangoes, milk, sugar,
+                  mango pulp, cream and ice cream.
+                </p>
+
+              </div>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="delete-btn" onclick="removeshakeItem(4)">
+                    🗑
+                  </button>
+
+                  <button onclick="decreaseshake(4)">
+                    −
+                  </button>
+
+                  <span id="pqty4">1</span>
+
+                  <button onclick="increaseshake(4)">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addshakeCart('Mango Shake',350,4)">
+
+                  Rs. <span id="ptotal4">350</span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- coffee modal  -->
+
+  <!-- Coffee Modal 1 -->
+  <div class="modal fade cake-modal" id="a1" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+            <div class="modal-image">
+              <img src="MATERIAL/coffee1.jfif" alt="Iced Spanish Latte">
+            </div>
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+              <h1>Iced Spanish Latte</h1>
+              <h2>Rs. 400</h2>
+              <p class="modal-description">A smooth and refreshing iced coffee with creamy milk and rich espresso.</p>
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>Espresso, chilled milk, condensed milk, ice cubes and coffee cream.</p>
+              </div>
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecoffeeItem(1)">🗑</button>
+                  <button onclick="decreasecoffee(1)">−</button>
+                  <span id="aqty1">1</span>
+                  <button onclick="increasecoffee(1)">+</button>
+                </div>
+                <button class="modal-cart add-to-cart-btn" onclick="addcoffeeCart('Iced Spanish Latte',400,1)">
+                  Rs. <span id="atotal1">400</span>
+                  <span>|</span> Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coffee Modal 2 -->
+  <div class="modal fade cake-modal" id="a2" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+            <div class="modal-image">
+              <img src="MATERIAL/coffee2.jfif" alt="Caramel Latte">
+            </div>
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+              <h1>Caramel Latte</h1>
+              <h2>Rs. 500</h2>
+              <p class="modal-description">A delightful latte blended with smooth espresso and sweet caramel flavour.
+              </p>
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>Espresso, steamed milk, caramel syrup, milk foam and caramel drizzle.</p>
+              </div>
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecoffeeItem(2)">🗑</button>
+                  <button onclick="decreasecoffee(2)">−</button>
+                  <span id="aqty2">1</span>
+                  <button onclick="increasecoffee(2)">+</button>
+                </div>
+                <button class="modal-cart add-to-cart-btn" onclick="addcoffeeCart('Caramel Latte',500,2)">
+                  Rs. <span id="atotal2">500</span>
+                  <span>|</span> Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coffee Modal 3 -->
+  <div class="modal fade cake-modal" id="a3" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+            <div class="modal-image">
+              <img src="MATERIAL/coffee3.jfif" alt="Pistachio Latte">
+            </div>
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+              <h1>Pistachio Latte</h1>
+              <h2>Rs. 450</h2>
+              <p class="modal-description">A creamy latte with a delicate pistachio flavour and a rich coffee finish.
+              </p>
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>Espresso, milk, pistachio cream, pistachio syrup and crushed pistachios.</p>
+              </div>
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecoffeeItem(3)">🗑</button>
+                  <button onclick="decreasecoffee(3)">−</button>
+                  <span id="aqty3">1</span>
+                  <button onclick="increasecoffee(3)">+</button>
+                </div>
+                <button class="modal-cart add-to-cart-btn" onclick="addcoffeeCart('Pistachio Latte',450,3)">
+                  Rs. <span id="atotal3">450</span>
+                  <span>|</span> Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coffee Modal 4 -->
+  <div class="modal fade cake-modal" id="a4" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+            <div class="modal-image">
+              <img src="MATERIAL/coffee4.jfif" alt="Iced Mocha Latte">
+            </div>
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+              <h1>Iced Mocha Latte</h1>
+              <h2>Rs. 620</h2>
+              <p class="modal-description">A chilled coffee treat combining bold espresso with rich chocolate and milk.
+              </p>
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>Espresso, chilled milk, chocolate sauce, ice cubes and whipped cream.</p>
+              </div>
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecoffeeItem(4)">🗑</button>
+                  <button onclick="decreasecoffee(4)">−</button>
+                  <span id="aqty4">1</span>
+                  <button onclick="increasecoffee(4)">+</button>
+                </div>
+                <button class="modal-cart add-to-cart-btn" onclick="addcoffeeCart('Iced Mocha Latte',620,4)">
+                  Rs. <span id="atotal4">620</span>
+                  <span>|</span> Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coffee Modal 5 -->
+  <div class="modal fade cake-modal" id="a5" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+            <div class="modal-image">
+              <img src="MATERIAL/coffee5.jfif" alt="Chocolate Iced Latte">
+            </div>
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+              <h1>Chocolate Iced Latte</h1>
+              <h2>Rs. 800</h2>
+              <p class="modal-description">A refreshing iced latte with creamy milk and an indulgent chocolate taste.
+              </p>
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>Espresso, milk, chocolate syrup, ice cubes, cocoa powder and chocolate drizzle.</p>
+              </div>
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecoffeeItem(5)">🗑</button>
+                  <button onclick="decreasecoffee(5)">−</button>
+                  <span id="aqty5">1</span>
+                  <button onclick="increasecoffee(5)">+</button>
+                </div>
+                <button class="modal-cart add-to-cart-btn" onclick="addcoffeeCart('Chocolate Iced Latte',800,5)">
+                  Rs. <span id="atotal5">800</span>
+                  <span>|</span> Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coffee Modal 6 -->
+  <div class="modal fade cake-modal" id="a6" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+            <div class="modal-image">
+              <img src="MATERIAL/coffee6.jfif" alt="Dalgona Coffee">
+            </div>
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+              <h1>Dalgona Coffee</h1>
+              <h2>Rs. 700</h2>
+              <p class="modal-description">A creamy coffee drink topped with a fluffy, whipped coffee layer.</p>
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>Instant coffee, sugar, hot water, chilled milk and ice cubes.</p>
+              </div>
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecoffeeItem(6)">🗑</button>
+                  <button onclick="decreasecoffee(6)">−</button>
+                  <span id="aqty6">1</span>
+                  <button onclick="increasecoffee(6)">+</button>
+                </div>
+                <button class="modal-cart add-to-cart-btn" onclick="addcoffeeCart('Dalgona Coffee',700,6)">
+                  Rs. <span id="atotal6">700</span>
+                  <span>|</span> Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coffee Modal 7 -->
+  <div class="modal fade cake-modal" id="a7" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+            <div class="modal-image">
+              <img src="MATERIAL/coffee7.jfif" alt="Vanilla Latte">
+            </div>
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+              <h1>Vanilla Latte</h1>
+              <h2>Rs. 730</h2>
+              <p class="modal-description">A smooth and comforting latte with a sweet vanilla aroma.</p>
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>Espresso, steamed milk, vanilla syrup and a light layer of milk foam.</p>
+              </div>
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecoffeeItem(7)">🗑</button>
+                  <button onclick="decreasecoffee(7)">−</button>
+                  <span id="aqty7">1</span>
+                  <button onclick="increasecoffee(7)">+</button>
+                </div>
+                <button class="modal-cart add-to-cart-btn" onclick="addcoffeeCart('Vanilla Latte',730,7)">
+                  Rs. <span id="atotal7">730</span>
+                  <span>|</span> Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coffee Modal 8 -->
+  <div class="modal fade cake-modal" id="a8" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+            <div class="modal-image">
+              <img src="MATERIAL/coffee8.jfif" alt="Chocolate Matcha">
+            </div>
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+              <h1>Chocolate Matcha</h1>
+              <h2>Rs. 480</h2>
+              <p class="modal-description">A unique drink that combines earthy matcha with a smooth chocolate flavour.
+              </p>
+              <div class="ingredients">
+                <h4>Ingredients</h4>
+                <p>Matcha powder, milk, chocolate sauce, sweetener and ice cubes.</p>
+              </div>
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecoffeeItem(8)">🗑</button>
+                  <button onclick="decreasecoffee(8)">−</button>
+                  <span id="aqty8">1</span>
+                  <button onclick="increasecoffee(8)">+</button>
+                </div>
+                <button class="modal-cart add-to-cart-btn" onclick="addcoffeeCart('Chocolate Matcha',480,8)">
+                  Rs. <span id="atotal8">480</span>
+                  <span>|</span> Add to Cart →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- customized-cake model  -->
+  <!-- modal1  -->
+  <div class="modal fade cake-modal" id="f1" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/customized1.png" alt="Dholki Cake">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Dholki Cake</h1>
+              <h2>Rs. 11550</h2>
+
+              <p class="modal-description">
+                A beautiful customized cake for your Dholki
+                celebration, decorated for a memorable event.
+              </p>
+
+              <div class="ingredients">
+                <h4>Cake Details</h4>
+                <p>
+                  Soft sponge cake, creamy frosting and
+                  customized decorative design.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecustomItem(1)">🗑</button>
+                  <button onclick="decreasecustom(1)">−</button>
+                  <span id="fqty1">1</span>
+                  <button onclick="increasecustom(1)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addcustomCart('Dholki Cake',11550,1)">
+                  Rs. <span id="ftotal1">11550</span>
+                  | Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal2  -->
+  <div class="modal fade cake-modal" id="f2" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/customized8.jpg" alt="Birthday Cake">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Birthday Cake</h1>
+              <h2>Rs. 22400</h2>
+
+              <p class="modal-description">
+                A special customized birthday cake designed
+                to make your birthday celebration unforgettable.
+              </p>
+
+              <div class="ingredients">
+                <h4>Cake Details</h4>
+                <p>
+                  Soft sponge, delicious cream frosting and
+                  birthday-themed decorations.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecustomItem(2)">🗑</button>
+                  <button onclick="decreasecustom(2)">−</button>
+                  <span id="fqty2">1</span>
+                  <button onclick="increasecustom(2)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addcustomCart('Birthday Cake',22400,2)">
+                  Rs. <span id="ftotal2">22400</span>
+                  | Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal3  -->
+  <div class="modal fade cake-modal" id="f3" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/customized3.jpg" alt="Party Cake">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Party Cake</h1>
+              <h2>Rs. 11500</h2>
+
+              <p class="modal-description">
+                A stylish customized cake for parties,
+                family gatherings and special occasions.
+              </p>
+
+              <div class="ingredients">
+                <h4>Cake Details</h4>
+                <p>
+                  Fresh sponge cake, smooth whipped cream
+                  and an attractive party-inspired design.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecustomItem(3)">🗑</button>
+                  <button onclick="decreasecustom(3)">−</button>
+                  <span id="fqty3">1</span>
+                  <button onclick="increasecustom(3)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addcustomCart('Party Cake',11500,3)">
+                  Rs. <span id="ftotal3">11500</span>
+                  | Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal4  -->
+  <div class="modal fade cake-modal" id="f4" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="modal-flex">
+
+            <div class="modal-image">
+              <img src="MATERIAL/custom10.jpeg" alt="Wedding Cake">
+            </div>
+
+            <div class="modal-info">
+              <button type="button" class="modal-close" data-bs-dismiss="modal">×</button>
+
+              <h1>Wedding Cake</h1>
+              <h2>Rs. 12350</h2>
+
+              <p class="modal-description">
+                An elegant customized wedding cake for your
+                special day, celebrations and memorable moments.
+              </p>
+
+              <div class="ingredients">
+                <h4>Cake Details</h4>
+                <p>
+                  Soft sponge, creamy frosting and elegant
+                  wedding-inspired decorations.
+                </p>
+              </div>
+
+              <div class="modal-bottom">
+                <div class="quantity">
+                  <button class="delete-btn" onclick="removecustomItem(4)">🗑</button>
+                  <button onclick="decreasecustom(4)">−</button>
+                  <span id="fqty4">1</span>
+                  <button onclick="increasecustom(4)">+</button>
+                </div>
+
+                <button class="modal-cart add-to-cart-btn" onclick="addcustomCart('Wedding Cake',12350,4)">
+                  Rs. <span id="ftotal4">12350</span>
+                  | Add to Cart →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- merchandise hero section  -->
+  <section class="merch-hero" id="merchandise" data-aos="fade-right">
+
+    <img src="MATERIAL/merchandise heroimage.jfif" alt="Bakerz Bite Merchandise">
+
+    <div class="merch-logo">
+      <div class="logo-merch"><img src="material/Logo (1).png" alt=""></div>
+    </div>
+
+    <div class="merch-text">
+      <h1 class="merch-heading">Bakerz Bite Merchandise</h1>
+      <p class="merch-paragraph">More Than Treats, It’s the Bakerz Bite Experience.</p>
+
+      <div class="moto">
+        <span class="line"></span>
+        <p class="moto-line"> Where smiles are served daily.</p>
+        <span class="line"></span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- merchandise cards  -->
+
+
+  <section class="container-fluid merchandise">
+    <h2 class="text-center merch-head">Our Bakerz Bite Collection</h2>
+    <p class="text-center merch-para">Take a little Bakerz bite home</p>
+
+    <!-- row 1 -->
+    <div class="row g-4">
+      <!-- card 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <!-- box 1  -->
+        <div class="box" data-aos="flip-up">
+
+          <!-- Product Image -->
+          <div class="image">
+            <img src="MATERIAL/cup.jfif" alt="Bakerz Bite Mug">
+          </div>
+
+          <div class="box-details">
+            <div class="content">
+              <h3 class="main-heading">Mug</h3>
+              <p class="description">
+                Enjoy your favorite coffee or tea in our stylish mug.
+              </p>
+            </div>
+
+            <div class="price">
+              <strong>Rs.</strong> 600 PKR
+            </div>
+
+            <div class="cart">
+              <button class="cart-btn" data-bs-toggle="modal" data-bs-target="#mug">
+                Add to Cart
+              </button>
+            </div>
+
+          </div><!-- box-details closing div -->
+
+        </div><!-- box 1 closing div -->
+      </div><!-- card 1 closing div -->
+
+      <!-- card 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <!-- box 2  -->
+
+        <div class="box" data-aos="flip-up">
+
+          <!-- Product Image -->
+          <div class="image">
+            <img src="MATERIAL/tumbler.jfif" alt="Bakerz Bite tumbler">
+          </div>
+
+          <div class="box-details">
+            <div class="content">
+              <h3 class="main-heading">Tumbler</h3>
+              <p class="description">
+                A stylish tumbler, for keeping your favorite drinks.
+              </p>
+            </div>
+
+            <div class="price">
+              <strong>Rs.</strong> 1,500 PKR
+            </div>
+
+            <div class="cart">
+              <button class="cart-btn" data-bs-toggle="modal" data-bs-target="#tumbler">
+                Add to Cart
+              </button>
+            </div>
+
+          </div><!-- box-details closing div -->
+
+        </div><!-- box 2 closing div -->
+      </div><!-- card 2 closing div -->
+
+      <!-- card 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <!-- box 3  -->
+
+        <div class="box" data-aos="flip-up">
+
+          <!-- Product Image -->
+          <div class="image">
+            <img src="MATERIAL/spoons.jfif" alt="Bakerz Bite spoons">
+          </div>
+
+          <div class="box-details">
+            <div class="content">
+              <h3 class="main-heading">Spoons</h3>
+              <p class="description">
+                Durable spoons, perfect for serving your favorite bakery treats.
+              </p>
+            </div>
+
+            <div class="price">
+              <strong>Rs.</strong> 900 PKR
+            </div>
+
+            <div class="cart">
+              <button class="cart-btn" data-bs-toggle="modal" data-bs-target="#spoons">
+                Add to Cart
+              </button>
+            </div>
+
+          </div><!-- box-details closing div -->
+
+        </div><!-- box 3 closing div -->
+      </div><!-- card 3 closing div -->
+
+    </div><!-- row 1 closing div -->
+
+    <!-- row 2 -->
+    <div class="row g-4">
+      <!-- card 4 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <!-- box 4  -->
+        <div class="box" data-aos="flip-up">
+
+          <!-- Product Image -->
+          <div class="image">
+            <img src="MATERIAL/cake box.jfif" alt="Bakerz Bite cake box">
+          </div>
+
+          <div class="box-details">
+            <div class="content">
+              <h3 class="main-heading">Cake Box</h3>
+              <p class="description">
+                keeping your cakes safe, and
+                beautifully presented.
+              </p>
+            </div>
+
+            <div class="price">
+              <strong>Rs.</strong> 300 PKR
+            </div>
+
+            <div class="cart">
+              <button class="cart-btn" data-bs-toggle="modal" data-bs-target="#cakebox">
+                Add to Cart
+              </button>
+            </div>
+
+          </div><!-- box-details closing div -->
+
+        </div><!-- box 4 closing div -->
+      </div><!-- card 4 closing div -->
+
+      <!-- card 5 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <!-- box 5  -->
+
+        <div class="box" data-aos="flip-up">
+
+          <!-- Product Image -->
+          <div class="image">
+            <img src="MATERIAL/cap.jfif" alt="Bakerz Bite tumbler">
+          </div>
+
+          <div class="box-details">
+            <div class="content">
+              <h3 class="main-heading">Cap</h3>
+              <p class="description">
+                Perfect for adding a touch of bakery spirit to your everyday.
+              </p>
+            </div>
+
+            <div class="price">
+              <strong>Rs.</strong> 300 PKR
+            </div>
+
+            <div class="cart">
+              <button class="cart-btn" data-bs-toggle="modal" data-bs-target="#cap">
+                Add to Cart
+              </button>
+            </div>
+
+          </div><!-- box-details closing div -->
+
+        </div><!-- box 5 closing div -->
+      </div><!-- card 5 closing div -->
+
+      <!-- card 6 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <!-- box 6  -->
+
+        <div class="box" data-aos="flip-up">
+
+          <!-- Product Image -->
+          <div class="image">
+            <img src="MATERIAL/bag.jfif" alt="Bakerz Bite bag">
+          </div>
+
+          <div class="box-details">
+            <div class="content">
+              <h3 class="main-heading">Bag</h3>
+              <p class="description">
+                Perfect for carrying your favorite treats with ease.
+              </p>
+            </div>
+
+            <div class="price">
+              <strong>Rs.</strong> 900 PKR
+            </div>
+
+            <div class="cart">
+              <button class="cart-btn" data-bs-toggle="modal" data-bs-target="#bag">
+                Add to Cart
+              </button>
+            </div>
+
+          </div><!-- box-details closing div -->
+
+        </div><!-- box 6 closing div -->
+      </div><!-- card 6 closing div -->
+
+    </div><!-- row 1 closing div -->
+  </section><!-- container-fluid merchandise closing div -->
+
+
+  <!-- modals  start  -->
+
+  <!-- modal 1  -->
+  <div class="modal" id="mug" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+
+            <div class="modal-image">
+              <img src="MATERIAL/cup.jfif" alt="mug">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Mug</h1>
+              <span class="modalprice"> Rs:600</span>
+              <p class="modal-para">Enjoy your favorite coffee or tea in our stylish mug.</p>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+
+                  <button class="minus">
+                    −
+                  </button>
+                  <span class="qty"></span>
+
+                  <button class="plus">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn">
+
+                  Rs. <span class="total"></span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- modal 2  -->
+  <div class="modal" id="tumbler" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+
+            <div class="modal-image">
+              <img src="MATERIAL/tumbler.jfif" alt="tumbler">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Tumbler</h1>
+              <span class="modalprice"> Rs:1,500</span>
+              <p class="modal-para">A stylish tumbler, for keeping your favorite drinks.</p>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+
+                  <button class="minus">
+                    −
+                  </button>
+
+                  <span class="qty"></span>
+                  <button class="plus">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn">
+
+                  Rs. <span class="total"></span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- modal 3  -->
+  <div class="modal" id="spoons" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+
+            <div class="modal-image">
+              <img src="MATERIAL/spoons.jfif" alt="spoons">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Spoons</h1>
+              <span class="modalprice"> Rs:900</span>
+              <p class="modal-para">Durable spoons, perfect for serving your favorite bakery treats.</p>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+
+                  <button class="minus">
+                    −
+                  </button>
+                  <span class="qty"></span>
+
+                  <button class="plus">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn">
+
+                  Rs. <span class="total"></span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- modal 4  -->
+  <div class="modal" id="cakebox" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+
+            <div class="modal-image">
+              <img src="MATERIAL/cake box.jfif" alt="mug">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>cake Box</h1>
+              <span class="modalprice"> Rs:300</span>
+              <p class="modal-para">keeping your cakes safe, and beautifully presented.</p>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+
+                  <button class="minus">
+                    −
+                  </button>
+
+                  <span class="qty"></span>
+                  <button class="plus">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn">
+
+                  Rs. <span class="total"></span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- modal 5  -->
+  <div class="modal" id="cap" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+
+            <div class="modal-image">
+              <img src="MATERIAL/cap.jfif" alt="mug">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Cap</h1>
+              <span class="modalprice"> Rs:300</span>
+              <p class="modal-para">Perfect for adding a touch of bakery spirit to your everyday.</p>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+
+                  <button class="minus">
+                    −
+                  </button>
+
+                  <span class="qty"></span>
+                  <button class="plus">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn">
+
+                  Rs. <span class="total"></span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- modal 6  -->
+  <div class="modal" id="bag" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-body p-0">
+
+          <div class="modal-flex">
+
+
+            <div class="modal-image">
+              <img src="MATERIAL/bag.jfif" alt="bag">
+            </div>
+
+            <!-- Right Side -->
+            <div class="modal-info">
+
+              <button type="button" class="modal-close" data-bs-dismiss="modal">
+                ×
+              </button>
+
+              <h1>Bag</h1>
+              <span class="modalprice"> Rs:900</span>
+              <p class="modal-para">Perfect for carrying your favorite treats with ease.</p>
+
+              <!-- Bottom -->
+              <div class="modal-bottom">
+
+                <div class="quantity">
+
+                  <button class="minus">
+                    −
+                  </button>
+                  <span class="qty"></span>
+
+                  <button class="plus">
+                    +
+                  </button>
+
+                </div>
+
+                <button class="modal-cart add-to-cart-btn">
+
+                  Rs. <span class="total"></span>
+
+                  <span>|</span>
+
+                  Add to Cart →
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--modals end-->
+
+
+  <!-- Bakerz Bite Cart Sidebar  -->
+  <div class="bakerz-cart-sidebar" id="bakerzCartSidebar">
+    <div class="bakerz-cart-header">
+      <h3>Your Cart Items</h3>
+      <button type="button" class="bakerz-cart-close" id="bakerzCartClose">&times;</button>
+    </div>
+    <div class="bakerz-cart-body" id="bakerzCartBody">
+      <p class="bakerz-empty-msg">Your cart is currently empty.</p>
+    </div>
+    <div class="bakerz-cart-footer">
+      <div class="bakerz-cart-total-row">
+        <span>Total Amount:</span>
+        <span id="bakerzCartTotalAmount">Rs. 0</span>
+      </div>
+      <button type="button" class="bakerz-checkout-btn" onclick="bakerzCheckoutAction()">Proceed to Checkout</button>
+    </div>
+  </div>
+  <div class="bakerz-cart-overlay" id="bakerzCartOverlay"></div>
+  
+
+
+  <!-- offers section   -->
+  <!-- offer section starting image  -->
+  <section class="offers" id="offers" data-aos="fade-right">
+    <img src="MATERIAL/hero offer.jfif" alt="Bakerz Bite offers">
+
+    <div class="offer-text">
+      <h1 class="offer-head">First Order Offer</h1>
+    </div>
+    <div class="offer-circle">
+      15%<br>
+      <span>OFF</span>
+    </div>
+  </section>
+
+
+  <!-- offer section cards -->
+  <div class="container-fluid offers-container ">
+    <div class="row g-4">
+
+      <div class="col-12 col-md-6 col-lg-4"><!-- card 1  -->
+
+        <div class="offersCard">
+          <div class="image">
+            <img src="MATERIAL/offer1.jfif" alt="Bakerz Bite cake">
+          </div>
+
+          <div class="content">
+            <span class="offer-badge">15% OFF</span>
+            <h3 class="offer-heading">Freshly Baked Favorites</h3>
+
+            <p class="offer-para">
+              Get 15% OFF on selected bakery favorites and make your day a little sweeter.
+            </p>
+            <button class="offer-btn"><a href="#cake">Shop Now</a></button>
+
+
+          </div>
+        </div>
+
+
+      </div><!--card 1 closing tag-->
+
+      <div class="col-12 col-md-6 col-lg-4"><!-- card 2  -->
+
+        <div class="offersCard">
+          <div class="image">
+            <img src="MATERIAL/offer 2.jfif" alt="Bakerz Bite  recipe coffee">
+          </div>
+
+          <div class="content">
+            <span class="offer-badge">15% OFF</span>
+            <h3 class="offer-heading">Coffee Lover's Treat</h3>
+
+            <p class="offer-para">
+              Enjoy 15% OFF on your favorite freshly brewed coffee and make every sip special.
+            </p>
+            <button class="offer-btn"><a href="#coffee">Shop Now</a></button>
+          </div>
+        </div>
+
+
+      </div><!--card 2 closing tag-->
+
+      <div class="col-12 col-md-6 col-lg-4"><!-- card 3 -->
+
+        <div class="offersCard">
+          <div class="image">
+            <img src="MATERIAL/offer 3.jfif" alt="Bakerz Bite shakes">
+          </div>
+
+          <div class="content">
+            <span class="offer-badge">15% OFF</span>
+            <h3 class="offer-heading">Creamy Shake Delight</h3>
+
+            <p class="offer-para">
+              Enjoy 15% OFF on our rich and creamy shakes, made fresh for every sweet craving.
+            </p>
+            <button class="offer-btn"><a href="#shake">Shop Now</a></button>
+          </div>
+        </div>
+
+
+      </div><!--card  3 closing tag-->
+
+
+    </div><!--row closing tag-->
+  </div><!--fliud container closing tag-->
+
+  <!-- feedback form  -->
+  <div class="feedback-section">
+
+    <div class="feedback-text" data-aos="fade-right">
+      <span class="feedback-span">WE VALUE YOUR EXPERIENCE</span>
+      <h2 class="feedback-heading">Share Your Feedback</h2>
+      <p class="feedback-para">
+
+        Tell us about your Bakerz Bite experience.
+        Your feedback helps us serve you better.
+      </p>
+    </div><!--feedback-text closing div -->
+
+    <!-- feedback form  -->
+    <div class="form-section">
+      <form id="feedbackForm">
+        <label for="name">Full Name:</label>
+        <input id="name" type="text" placeholder="Enter Your Full Name">
+
+        <label for="Email">Email:</label>
+        <input id="Email" type="email" placeholder="Enter Your Email">
+
+        <label for="rating">Give Your Rating</label>
+        <div id="starsContainer" class="stars">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
+
+        <label for="feedback">Your Feedback</label>
+        <textarea id="feedback"></textarea>
+
+        <button type="submit" id="submit-feedback">
+          Submit Feedback
+        </button>
+      </form>
+    </div>
+
+  </div><!--feedback section closing div-->
+
+
+
+  <!-- testimonials  -->
+
+  <section class="testimonials-hero" data-aos="fade-right">
+    <img src="MATERIAL/what our customer say hero.jfif" alt=" customers section hero image">
+
+    <div class="testimonials-text">
+      <h3 class="testimonials-head">What Our Customers Say</h3>
+      <p class="testimonials-para">Every kind word inspires us to bake something even better.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS CAROUSEL -->
+  <section class="testimonials-carousel">
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicators -->
+      <div id="carouselIndicators" class="carousel-indicators">
+        <!-- Dynamically populated -->
+      </div>
+
+      <!-- Carousel Content -->
+      <div id="carouselInner" class="carousel-inner">
+        <!-- Dynamic slides injected here -->
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <i class="fa-solid fa-chevron-left"></i>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+
+  <!-- upside button  -->
+  <button id="backToTop" title="Go to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <footer>
+
+    <div class="container py-5">
+
+      <div class="row">
+
+        <!-- Bakerz Bite -->
+        <div class="col-md-3 footer-brand">
+          <div class="footer-logo"> <img src="Material/Logo.png" alt=""></div>
+          <p>Freshly baked cakes, pastries, cookies and more.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+
+          <a href="#home">Home</a><br>
+          <a href="#categoryFilter">Categories</a><br>
+          <a href="#offers">Offers</a><br>
+          <a href="About.html#gallery">Gallery</a><br>
+          <a href="About.html">About Us</a><br>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="col-md-3">
+          <h5>Contact Us</h5>
+
+          <p><i class="fa-solid fa-phone"></i> 030-012-345-67</p>
+          <p><i class="fa-solid fa-envelope"></i> info@bakerzbite.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Karachi, Pakistan</p>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="col-md-3">
+          <h5>Follow Us</h5>
+
+          <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram ms-3"></i></a>
+          <a href="https://wa.me/923001234567" target="_blank"><i class="fa-brands fa-whatsapp ms-3"></i></a>
+        </div>
+
+      </div>
+
+
+
+      <div class="ticker">
+        <div class="ticker-content" id="tickerContent">
+          <i class="fa-regular fa-calendar-days"></i> Date: <span id="currentDate"></span>
+          &nbsp;&nbsp; | &nbsp;&nbsp;
+          <i class="fa-regular fa-clock"></i> Time: <span id="currentTime"></span>
+          &nbsp;&nbsp; | &nbsp;&nbsp;
+          <i class="fa-solid fa-location-dot"></i>Location: <span id="location">Getting location...</span>
+        </div>
+      </div>
+      <hr>
+      <div class="copyright">
+        <p><i class="fa-regular fa-copyright"></i>2026 Bakerz Bite. All Rights Reserved.</p>
+      </div>
+
+
+    </div>
+  </footer>
+
+  <!-- Jquery link cdn -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"
+    integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+    integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $('#counter').counterUp();
+  </script>
+
+
+
+
+  <!-- Bs Cdn Js V 5.3 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+
+  <!-- SweetAlert2 CDN Link -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <!-- AOS JS CDN LINK  -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- lightbox 2 js cdn  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.12.0/js/lightbox.min.js"
+    integrity="sha512-GPt0Vd//obpTV/wM591euN1F63tIlgHgiqlYWHUr8QdZnjJlGt5a55NN9fd8NlZ0j9aKmIn5IgBtJ/FoHUX1Ww=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- js link  -->
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>

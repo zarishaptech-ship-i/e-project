@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakerz Bite</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="Material/logo with bg.png" type="image/x-icon">
+
+  <!-- Bs Cdn Css V 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+
+  <!-- dancing script  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- fontawesome cdn  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS CDN CSS LINK  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- css link  -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: #120b18 !important;
+
+    }
+
+    /* Fix navbar and contact page overlap */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navitem {
+      position: relative;
+      z-index: 1000;
+    }
+
+
+    #contact {
+      position: relative;
+      scroll-margin-top: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <p>Now Delivering in Karachi!</p>
+
+
+    </div>
+    <!-- Navbar -->
+    <nav class="navitem">
+      <div class="nav-left">
+        <!--  LOCATION  -->
+
+        <div class="location" onclick="openLocationPopup()">
+
+          <div class="location-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+
+          <div class="location-content">
+            <span class="location-title">DELIVERY</span>
+            <span id="display">Select Location</span>
+          </div>
+
+          <div class="location-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+
+        </div>
+
+
+        <!--  LOCATION POPUP -->
+
+        <div class="location-popup" id="locationPopup">
+
+          <div class="location-modal">
+
+            <!-- Close Button -->
+            <button class="close-location" onclick="closeLocationPopup()">
+              &times;
+            </button>
+
+
+            <!-- Logo -->
+            <div class="popup-logo-box">
+              <img src="Material/logo.png" alt="Bakerz Bite">
+            </div>
+
+
+            <!-- Heading -->
+            <h2>Select Your Order Type</h2>
+
+
+            <!-- Delivery / Pick-Up -->
+            <div class="order-type">
+
+              <button class="order-btn active" id="deliveryBtn">
+                Delivery
+              </button>
+
+              <button class="order-btn" id="pickupBtn">
+                Pick-Up
+              </button>
+
+            </div>
+
+
+            <!-- Location Text -->
+            <p class="location-question">
+              Please select your location
+            </p>
+
+
+            <!-- City -->
+            <label for="citySelect">
+              City
+            </label>
+
+            <input type="text" value="Karachi" disabled class="popup-select">
+
+
+
+            <!-- Area -->
+            <label for="areaSelect">
+              Please select your area
+            </label>
+
+            <select id="areaSelect" class="popup-select">
+
+              <option value="">
+                Select Location
+              </option>
+
+            </select>
+
+
+            <!-- Select Button -->
+            <button class="select-location-btn" onclick="confirmLocation()">
+              Select
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- Call & Order -->
+        <div class="call text">
+          <div class="call-icon"> <i class="fa-solid fa-phone"></i> </div>021-111-123-456
+        </div>
+      </div>
+
+      <!-- Logo -->
+      <a href="" class="navlogo"><img src="Material/Logo.png" alt="Bakerz Bite"></a>
+      <!-- Visitor Counter -->
+      <div class="nav-right">
+        <div class="visitor "> <i class="fa-regular fa-user vc"></i><span id="counter">1204</span> </div>
+
+        <!-- Cart
+        <div class="cart"><i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count">0</span>
+        </div> -->
+
+        <!-- Menu Button -->
+        <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">☰</button>
+      </div>
+
+
+      <div class="nav-menu" id="navMenu">
+
+        <!-- Close Button -->
+        <button class="close-btn" onclick="toggleMenu()">×</button>
+
+        <a href="index.html">Home</a>
+        <a href="index.html#merchandise">Merchandise</a>
+        <a href="index.html#offers">Offers</a>
+        <a href="About.html#gallery">Gallery</a>
+        <a href="About.html">About Us</a>
+        <a href="contact.html#faq">FAQ</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </nav>
+
+  </header>
+
+
+  <!-- Contact Section -->
+  <div class="container  fixing " id="contact">
+
+    <div class="contact-wrap p-4 p-md-5">
+
+      <div class="text-center mb-4">
+        <h2 class="contact-heading display-6">Contact Us</h2>
+        <p class="text-muted">Have questions, feedback or a special request? We'd love to hear from you!</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Form Column -->
+        <div class="col-lg-7">
+          <form action="index.html">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="fn" class="form-label" data-aos="fade-right"><i class="bi bi-person-fill"></i> First
+                  Name:</label>
+                <input type="text" placeholder="Enter First Name" name="fn" id="fn" class="form-control" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="ln" class="form-label" data-aos="fade-right"><i class="bi bi-person-fill"></i> Last
+                  Name:</label>
+                <input type="text" placeholder="Enter Last Name" name="ln" id="ln" class="form-control" required>
+              </div>
+
+              <div class="col-12">
+                <label for="mail" class="form-label" data-aos="fade-right"><i class="bi bi-envelope-fill"></i> Your
+                  Email:</label>
+                <input type="email" id="mail" placeholder="Enter Your Email " name="mail"
+                  pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" title="Please enter a valid @gmail.com address"
+                  class="form-control" required>
+              </div>
+
+              <div class="col-12">
+                <label for="Address" class="form-label" data-aos="fade-right"><i class="bi bi-chat-left-text-fill"></i>
+                  Address:</label>
+                <input type="text" id="Address" placeholder="Enter Your Email Address" name="subject"
+                  class="form-control" required>
+              </div>
+
+              <div class="col-12">
+                <label for="Contact" class="form-label" data-aos="fade-right"> <i class="bi bi-telephone-fill"></i>
+                  Contact Number:</label>
+                <input type="text" id="Contact" placeholder="Enter Your Phone Number" name="phone" class="form-control"
+                  required>
+              </div>
+
+              <div class="col-12">
+                <label for="msg" class="form-label" data-aos="fade-right"><i class="bi bi-chat-dots-fill"></i> Your
+                  Message:</label>
+                <textarea name="message" id="msg" rows="4" placeholder="Write your message here..." class="form-control"
+                  required></textarea>
+              </div>
+
+              <div class="col-12 mt-3">
+                <button type="submit" class="btn contact-btn w-100 w-md-auto">
+                  <i class="bi bi-send-fill me-2"></i>Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Info Column -->
+        <div class="col-lg-5">
+          <div class="info-box p-4 p-md-5">
+            <h3 class="contact-heading-2 mb-3">Visit Bakerz Bite</h3>
+            <p class="p mb-4">We'd love to serve you fresh bakery items! Contact us for custom
+              orders and inquiries.</p>
+
+            <div class="info-item mb-3 d-flex align-items-center">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>Main Bakery Road, Karachi</span>
+            </div>
+
+            <div class="info-item mb-3 d-flex align-items-center">
+              <i class="bi bi-telephone-fill"></i>
+              <span>021-111-123-456</span>
+            </div>
+
+            <div class="info-item d-flex align-items-center">
+              <i class="bi bi-envelope-at-fill"></i>
+              <span>info@bakerzbite.com</span>
+            </div>
+
+            <br>
+
+            <!-- Location   -->
+            <div class="Map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.5340499917133!2d67.0626887751083!3d24.981962940385465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb340e584b891c3%3A0x29b2cbc198ba2dbd!2sAptech%20Computer%20Education%20North%20Karachi%20Center!5e0!3m2!1sen!2s!4v1791808245353!5m2!1sen!2s"
+                width="190" height="100" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- FAQs heading-->
+
+  <section class="faqs-text text-center" id="faq">
+    <p class="help-center">BAKERZ BITE HELP CENTER</p>
+    <h4 class="faq-heading">Frequently Asked Questions</h4>
+    <p class="faq-para ">Everything you need to know before your next delicious bite.</p>
+
+
+
+    <!-- FAQs Questions -->
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+
+      <!-- Accordion One -->
+      <div class="accordion-item" data-aos="fade-right">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            what is Bakerz Bite?
+          </button>
+        </h2>
+
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Bakerz Bite is a bakery that offers delicious cakes, pastries, cookies, desserts, and handcrafted
+            beverages.
+            Bakerz Bite offers a wide range of baked goods made fresh in-store every day. The bakery chain offers more
+            than 300 different kinds of baked goods, including artisan pastries, gourmet cakes and desserts, and
+            handcrafted beverages.
+            We believe and are dedicated in delivering premium quality products. So we only use real butter, cream and
+            unbleached flour. We treat our Customers as our family and will not use any ingredient which we will not
+            want to feed ours.
+            Our Motto: Where smiles are served daily.
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Two -->
+      <div class="accordion-item" data-aos="fade-left">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            How can I place an order at Bakerz Bite?
+          </button>
+        </h2>
+
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            You can easily place an order through our website!
+            Browse our collection, choose your favorite products,
+            select the quantity you want, and click
+            <strong>Add to Cart</strong>. Once you have added all your
+            desired items, review your cart and proceed to place
+            your order. Enjoy a simple and convenient shopping
+            experience with Bakerz Bite!
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Three -->
+      <div class="accordion-item" data-aos="fade-right">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            What products does Bakerz Bite offer?
+          </button>
+        </h2>
+
+        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Bakerz Bite offers a delightful variety of freshly baked goods,
+            including artisan pastries, cupcakes, cookies, desserts, and shakes.
+            We also offer Bakerz Bite merchandise for our customers who want
+            to take a little piece of our bakery experience home.
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Four -->
+      <div class="accordion-item" data-aos="fade-left">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            Do you offer a discount on the first order?
+          </button>
+        </h2>
+
+        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Yes! At Bakerz Bite, new customers can enjoy a special
+            15% OFF on their first order. Explore our delicious bakery
+            treats, refreshing beverages, and delightful desserts to
+            make your first experience extra special. Visit our Offers
+            section to learn more about our first-order promotion and
+            enjoy a sweeter start with Bakerz Bite!
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+  <footer>
+
+    <div class="container py-5">
+
+      <div class="row">
+
+        <!-- Bakerz Bite -->
+        <div class="col-md-3 footer-brand">
+          <div class="footer-logo"> <img src="Material/Logo.png" alt=""></div>
+          <p>Freshly baked cakes, pastries, cookies and more.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+          <a href="index.html">Home</a><br>
+          <a href="index.html#categoryFilter">Categories</a><br>
+          <a href="index.html#offer">Offers</a><br>
+          <a href="About.html">Gallery</a><br>
+          <a href="About.html">About Us</a><br>
+          <a href="contact.html">Contact Us</a>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="col-md-3">
+          <h5>Contact Us</h5>
+
+          <p><i class="fa-solid fa-phone"></i> 021-111-123-456</p>
+          <p><i class="fa-solid fa-envelope"></i> info@bakerzbite.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Karachi, Pakistan</p>
+        </div>
+
+        <!-- Follow Us -->
+        <div class="col-md-3">
+          <h5>Follow Us</h5>
+
+           <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram ms-3"></i></a>
+          <a href="https://wa.me/923001234567" target="_blank"><i class="fa-brands fa-whatsapp ms-3"></i></a>
+        </div>
+
+      </div>
+
+
+
+      <div class="ticker">
+        <div class="ticker-content" id="tickerContent">
+          <i class="fa-regular fa-calendar-days"></i> Date: <span id="currentDate"></span>
+          &nbsp;&nbsp; | &nbsp;&nbsp;
+          <i class="fa-regular fa-clock"></i> Time: <span id="currentTime"></span>
+          &nbsp;&nbsp; | &nbsp;&nbsp;
+          <i class="fa-solid fa-location-dot"></i>Location: <span id="location">Getting location...</span>
+        </div>
+      </div>
+      <hr>
+      <div class="copyright">
+        <p><i class="fa-regular fa-copyright"></i>2026 Bakerz Bite. All Rights Reserved.</p>
+      </div>
+
+
+    </div>
+  </footer>
+  <!-- Bs Cdn Js V 5.3 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <!-- js link  -->
+  <script src="script.js"></script>
+
+  <!-- AOS JS CDN LINK  -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+
+</body>
+
+</html>

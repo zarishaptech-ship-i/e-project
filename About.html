@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakerz Bite</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Material/logo with bg.png" type="image/x-icon">
+
+    <!-- Bs Cdn Css V 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+
+    <!-- dancing script  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- fontawesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- AOS CDN CSS LINK  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        /* Fix navbar and contact page overlap */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navitem {
+            position: relative;
+            z-index: 1000;
+        }
+
+
+        #about {
+            position: relative;
+            scroll-margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <p>Now Delivering in Karachi!</p>
+
+
+        </div>
+        <!-- Navbar -->
+        <nav class="navitem">
+            <div class="nav-left">
+                <!--  LOCATION  -->
+
+                <div class="location" onclick="openLocationPopup()">
+
+                    <div class="location-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div class="location-content">
+                        <span class="location-title">DELIVERY</span>
+                        <span id="display">Select Location</span>
+                    </div>
+
+                    <div class="location-arrow">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+
+                </div>
+
+
+                <!--  LOCATION POPUP -->
+
+                <div class="location-popup" id="locationPopup">
+
+                    <div class="location-modal">
+
+                        <!-- Close Button -->
+                        <button class="close-location" onclick="closeLocationPopup()">
+                            &times;
+                        </button>
+
+
+                        <!-- Logo -->
+                        <div class="popup-logo-box">
+                            <img src="Material/logo.png" alt="Bakerz Bite">
+                        </div>
+
+
+                        <!-- Heading -->
+                        <h2>Select Your Order Type</h2>
+
+
+                        <!-- Delivery / Pick-Up -->
+                        <div class="order-type">
+
+                            <button class="order-btn active" id="deliveryBtn">
+                                Delivery
+                            </button>
+
+                            <button class="order-btn" id="pickupBtn">
+                                Pick-Up
+                            </button>
+
+                        </div>
+
+
+                        <!-- Location Text -->
+                        <p class="location-question">
+                            Please select your location
+                        </p>
+
+
+                        <!-- City -->
+                        <label for="citySelect">
+                            City
+                        </label>
+
+                        <input type="text" value="Karachi" disabled class="popup-select">
+
+
+
+                        <!-- Area -->
+                        <label for="areaSelect">
+                            Please select your area
+                        </label>
+
+                        <select id="areaSelect" class="popup-select">
+
+                            <option value="">
+                                Select Location
+                            </option>
+
+                        </select>
+
+
+                        <!-- Select Button -->
+                        <button class="select-location-btn" onclick="confirmLocation()">
+                            Select
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Call & Order -->
+                <div class="call text">
+                    <div class="call-icon"> <i class="fa-solid fa-phone"></i> </div>021-111-123-456
+                </div>
+            </div>
+
+            <!-- Logo -->
+            <a href="" class="navlogo"><img src="Material/Logo.png" alt="Bakerz Bite"></a>
+            <!-- Visitor Counter -->
+            <div class="nav-right">
+                <div class="visitor "> <i class="fa-regular fa-user vc"></i><span id="counter">1204</span> </div>
+
+
+                <!-- Menu Button -->
+                <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">☰</button>
+            </div>
+
+
+            <div class="nav-menu" id="navMenu">
+
+                <!-- Close Button -->
+                <button class="close-btn" onclick="toggleMenu()">×</button>
+
+                <a href="index.html">Home</a>
+                <a href="index.html#merchandise">Merchandise</a>
+                <a href="index.html#offers">Offers</a>
+                <a href="About.html#gallery">Gallery</a>
+                <a href="About.html">About Us</a>
+                <a href="contact.html#faq">FAQ</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- about section  -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+
+            <div class="about-content">
+                <span class="about-subtitle">WELCOME TO BAKERZ BITE</span>
+
+                <h2 data-aos="fade-right">A Little Slice of Happiness</h2>
+
+                <p>
+                    At Bakerz Bite, we believe every sweet moment deserves
+                    something special. We create delicious cakes, fresh pastries,
+                    delightful cookies and irresistible desserts with love and care.
+                </p>
+
+                <p>
+                    From beautiful celebration cakes to everyday treats,
+                    every bite is made to bring happiness to your special moments.
+                    From farm-fresh ingredients to freshly baked delights, we bring you the goodness of nature in every bite.
+                </p>
+
+                <div class="about-highlights" data-aos="fade-down">
+                    <div>
+                        <i class="fa-solid fa-cake-candles"></i>
+                        <h4>Freshly Baked</h4>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-heart"></i>
+                        <h4>Made With Love</h4>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-star"></i>
+                        <h4>Premium Quality</h4>
+                    </div>
+                </div>
+
+                <a href="index.html#cake" class="about-btn">Explore Our Treats</a>
+            </div>
+
+            <div class="about-video-wrapper">
+                <video class="about-video" autoplay muted loop playsinline>
+                    <source src="MATERIAL/Cake, Baker, Dessert. Free Stock Video - Pixabay.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- gallery -->
+
+    <section class="gallery-section" id="gallery">
+
+        <div class="gallery-heading">
+            <span class="gallery-eyebrow">✦ &nbsp; A TASTE OF ARTISTRY &nbsp; ✦</span>
+            <h2 data-aos="fade-right">Bakery <span>Gallery</span></h2>
+            <p data-aos="fade-left">Every creation tells a delicious story.</p>
+            <div class="heading-line"><span>✦</span></div>
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item gallery-tall">
+                <a href="MATERIAL/cake1.jpg" data-lightbox="image-1">
+                    <img src="MATERIAL/cake1.jpg" alt="Luxury Chocolate Cake">
+
+                    <div class="gallery-number">01</div>
+                    <div class="gallery-overlay">
+                        <span>MADE WITH LOVE</span>
+                        <h3>Signature Cakes</h3>
+
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="MATERIAL/cake5.png" data-lightbox="image-2">
+                    <img src="MATERIAL/cake5.png" alt="Fresh Pastries">
+                    <div class="gallery-number">02</div>
+                    <div class="gallery-overlay">
+                        <span>FRESHLY BAKED</span>
+                        <h3>Signature Cakes</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="MATERIAL/savory1.png" data-lightbox="image-3">
+                    <img src="MATERIAL/savory1.png" alt="Chocolate Cookies">
+                    <div class="gallery-number">03</div>
+                    <div class="gallery-overlay">
+                        <span>SAVOURY DELIGHTS</span>
+                        <h3>Savories</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item">
+                <a href="MATERIAL/savory7.jpg" data-lightbox="image-4">
+                    <img src="MATERIAL/savory7.jpg" alt="Chocolate Brownies">
+                    <div class="gallery-number">04</div>
+                    <div class="gallery-overlay">
+                        <span>PERFECTLY CRISP</span>
+                        <h3>Savories</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item gallery-wide">
+                <a href="MATERIAL/cupcake1.jpeg" data-lightbox="image-5">
+                    <img src="MATERIAL/cupcake1.jpeg" alt="Decorated Cupcakes">
+                    <div class="gallery-number">05</div>
+                    <div class="gallery-overlay">
+                        <span>LITTLE BITES OF HAPPINESS</span>
+                        <h3>Artisan Cupcakes</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gallery-item">
+
+                <a href="MATERIAL/pastry5.png" data-lightbox="image-6">
+
+                    <img src="MATERIAL/pastry5.png" alt="Savory Bakery Snacks">
+                    <div class="gallery-number">06</div>
+                    <div class="gallery-overlay">
+                        <span>SWEET TREATS</span>
+                        <h3>Fresh Pastry</h3>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="gallery-item">
+                <a href="MATERIAL/shake1.jfif" data-lightbox="image-7">
+
+                    <img src="MATERIAL/shake1.jfif" alt="Fruit Tart">
+                    <div class="gallery-number">07</div>
+                    <div class="gallery-overlay">
+                        <span>DELICATE & DELIGHTFUL</span>
+                        <h3>Creamy Shakes</h3>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="gallery-item">
+                <a href="MATERIAL/shake3.jfif" data-lightbox="image-8">
+
+                    <img src="MATERIAL/shake3.jfif" alt="Cinnamon Rolls">
+                    <div class="gallery-number">08</div>
+                    <div class="gallery-overlay">
+                        <span>RICH & CREAMY</span>
+                        <h3>Creamy Shakes</h3>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="gallery-item">
+                <a href="MATERIAL/coffee5.jfif" data-lightbox="image-9">
+
+                    <img src="MATERIAL/coffee5.jfif" alt="Fresh Apple Pie">
+                    <div class="gallery-number">09</div>
+                    <div class="gallery-overlay">
+                        <span>A MOMENT OF BLISS</span>
+                        <h3>Coffee Moments</h3>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="gallery-item">
+                <a href="MATERIAL/coffee1.jfif" data-lightbox="image-10">
+
+                    <img src="MATERIAL/coffee1.jfif" alt="Glazed Donuts">
+                    <div class="gallery-number">10</div>
+                    <div class="gallery-overlay">
+                        <span>GOLDEN GOODNESS</span>
+                        <h3>Coffee Moments</h3>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="gallery-item">
+                <a href="MATERIAL/customized8.jpg" data-lightbox="image-11">
+
+                    <img src="MATERIAL/customized8.jpg" alt="Chocolate Eclairs">
+                    <div class="gallery-number">11</div>
+                    <div class="gallery-overlay">
+                        <span>A TOUCH OF ELEGANCE</span>
+                        <h3>Customized Cakes</h3>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="gallery-item">
+                <a href="MATERIAL/custom10.jpeg" data-lightbox="image-12">
+
+                    <img src="MATERIAL/custom10.jpeg" alt="Artisan Bread">
+                    <div class="gallery-number">12</div>
+                    <div class="gallery-overlay">
+                        <span>MADE JUST FOR YOU</span>
+                        <h3>Customized Cakes</h3>
+                    </div>
+            </div>
+            </a>
+
+        </div>
+
+        <div class="gallery-footer" data-aos="fade-down">
+            <span>BAKED WITH PASSION</span>
+            <span class="footer-star">✦</span>
+            <span>SHARED WITH LOVE</span>
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        <div class="container py-5">
+
+            <div class="row">
+
+                <!-- Bakerz Bite -->
+                <div class="col-md-3 footer-brand">
+                    <div class="footer-logo"> <img src="Material/Logo.png" alt=""></div>
+                    <p>Freshly baked cakes, pastries, cookies and more.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+
+                    <a href="index.html">Home</a><br>
+                    <a href="index.html#categoryFilter">Categories</a><br>
+                    <a href="index.html#offers">Offers</a><br>
+                    <a href="About.html#gallery">Gallery</a><br>
+                    <a href="About.html#about">About Us</a><br>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+
+                    <p><i class="fa-solid fa-phone"></i> 021-111-123-456</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@bakerzbite.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Karachi, Pakistan</p>
+                </div>
+
+                <!-- Follow Us -->
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram ms-3"></i></a>
+                    <a href="https://wa.me/923001234567" target="_blank"><i class="fa-brands fa-whatsapp ms-3"></i></a>
+                </div>
+
+            </div>
+
+
+
+            <div class="ticker">
+                <div class="ticker-content" id="tickerContent">
+                    <i class="fa-regular fa-calendar-days"></i> Date: <span id="currentDate"></span>
+                    &nbsp;&nbsp; | &nbsp;&nbsp;
+                    <i class="fa-regular fa-clock"></i> Time: <span id="currentTime"></span>
+                    &nbsp;&nbsp; | &nbsp;&nbsp;
+                    <i class="fa-solid fa-location-dot"></i>Location: <span id="location">Getting location...</span>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">
+                <p><i class="fa-regular fa-copyright"></i>2026 Bakerz Bite. All Rights Reserved.</p>
+            </div>
+
+
+        </div>
+    </footer>
+
+
+    <!-- Jquery link cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"
+        integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+        integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $('#counter').counterUp();
+    </script>
+
+    <script>
+        fetch("areas.json")
+            .then(response => response.json())
+            .then(areas => {
+
+                let select = document.getElementById("areaSelect");
+
+                areas.forEach(area => {
+                    let option = document.createElement("option");
+                    // console.log(option)
+                    option.value = area;
+                    option.textContent = area;
+
+                    select.appendChild(option);
+                });
+
+            });
+
+        function selected_area() {
+            let selected_area = document.getElementById('areaSelect').value;
+
+            console.log(selected_area)
+            document.getElementById('display').innerText = selected_area
+        } 
+    </script>
+
+
+
+    <!-- Bs Cdn Js V 5.3 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+
+
+    <!-- SweetAlert2 CDN Link -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+
+
+    <!-- AOS JS CDN LINK  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- lightbox 2 js cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.12.0/js/lightbox.min.js"
+        integrity="sha512-GPt0Vd//obpTV/wM591euN1F63tIlgHgiqlYWHUr8QdZnjJlGt5a55NN9fd8NlZ0j9aKmIn5IgBtJ/FoHUX1Ww=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- js link  -->
+    <script src="script.js"></script>
+
+    <body>
+
+</html>
